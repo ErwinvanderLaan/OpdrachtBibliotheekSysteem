@@ -1,7 +1,5 @@
-package System;
+package book;
 
-// Default class, so class library can reach it, but class Main can't.
-// This is because Main is in a different package
 class Book {
 
   private long id;

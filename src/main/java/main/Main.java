@@ -1,12 +1,21 @@
-package Main;
+package main;
 
-import System.Library;
+import book.BookRepository;
+
 import java.util.Scanner;
+
 
 public class Main {
 
+  // Scanner method to ask for user input.
+  public static String askForInput (String question){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println(question);
+    return scanner.next();
+  }
+
   public static void main(String[] args) {
-    Library library = new Library();
+    BookRepository bookRepository = new BookRepository();
 
     while (true) {
 
@@ -29,51 +38,43 @@ public class Main {
       // A switch for each of the three choices.
       switch (choice) {
         case "1":
-           library.addBook ();
+           bookRepository.addBook ();
            break;
 
         case "2":
-          library.removeBook(1);
+          bookRepository.removeBook(1);
           break;
 
         case "3":
-          library.showBook(1);
+          bookRepository.showBook(1);
           break;
 
         case "4":
-          library.showBooks();
+          bookRepository.showBooks();
           break;
 
         case "5":
-          library.borrowBook(1);
+          bookRepository.borrowBook(1);
           break;
 
         case "6":
-          library.returnBook(1);
+          bookRepository.returnBook(1);
           break;
 
         case "7":
-          library.showBorrowedBooks();
+          bookRepository.showBorrowedBooks();
           break;
 
         case "8":
-          library.showAvailableBooks();
+          bookRepository.showAvailableBooks();
           break;
 
         case "q":
           return;
       }
 
+   }
 
-    }
-
-  }
-
-  // Scanner method to ask for user input.
-  public static String askForInput (String question){
-    Scanner scanner = new Scanner(System.in);
-    System.out.println(question);
-    return scanner.next();
   }
 
 }
