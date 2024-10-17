@@ -1,23 +1,12 @@
-package main;
+package Main;
 
-import Magazine.MagazineRepository;
-import book.BookRepository;
-
+import System.Library;
 import java.util.Scanner;
-
 
 public class Main {
 
-  // Scanner method to ask for user input.
-  public static String askForInput (String question){
-    Scanner scanner = new Scanner(System.in);
-    System.out.println(question);
-    return scanner.next();
-  }
-
   public static void main(String[] args) {
-    BookRepository bookRepository = new BookRepository();
-    MagazineRepository magazineRepository = new MagazineRepository();
+    Library library = new Library();
 
     while (true) {
 
@@ -37,46 +26,54 @@ public class Main {
 
       String choice = askForInput("Choose an option:");
 
-      // A switch for each of the choices.
+      // A switch for each of the three choices.
       switch (choice) {
         case "1":
-          bookRepository.addBook ();
-          break;
+           library.addBook ();
+           break;
 
         case "2":
-          bookRepository.removeBook(1);
+          library.removeBook(1);
           break;
 
         case "3":
-          bookRepository.showBook(1);
+          library.showBook(1);
           break;
 
         case "4":
-          bookRepository.showBooks();
+          library.showBooks();
           break;
 
         case "5":
-          bookRepository.borrowBook(1);
+          library.borrowBook(1);
           break;
 
         case "6":
-          bookRepository.returnBook(1);
+          library.returnBook(1);
           break;
 
         case "7":
-          bookRepository.showBorrowedBooks();
+          library.showBorrowedBooks();
           break;
 
         case "8":
-          bookRepository.showAvailableBooks();
+          library.showAvailableBooks();
           break;
 
         case "q":
           return;
       }
 
+
     }
 
+  }
+
+  // Scanner method to ask for user input.
+  public static String askForInput (String question){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println(question);
+    return scanner.next();
   }
 
 }
