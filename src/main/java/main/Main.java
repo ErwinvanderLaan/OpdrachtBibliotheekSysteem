@@ -1,12 +1,11 @@
-package Main;
+package main;
 
-import System.Library;
+import library.Item;
 import java.util.Scanner;
 
 public class Main {
 
   public static void main(String[] args) {
-    Library library = new Library();
 
     while (true) {
 
@@ -29,35 +28,35 @@ public class Main {
       // A switch for each of the three choices.
       switch (choice) {
         case "1":
-           library.addBook ();
+           item.addBook ();
            break;
 
         case "2":
-          library.removeBook(1);
+          item.removeBook(1);
           break;
 
         case "3":
-          library.showBook(1);
+          item.showBook(1);
           break;
 
         case "4":
-          library.showBooks();
+          item.showBooks();
           break;
 
         case "5":
-          library.borrowBook(1);
+          item.borrowBook(1);
           break;
 
         case "6":
-          library.returnBook(1);
+          item.returnBook(1);
           break;
 
         case "7":
-          library.showBorrowedBooks();
+          item.showBorrowedBooks();
           break;
 
         case "8":
-          library.showAvailableBooks();
+          item.showAvailableBooks();
           break;
 
         case "q":
