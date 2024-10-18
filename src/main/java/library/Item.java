@@ -37,13 +37,12 @@ public class Item {
   }
 
   // Setters:
-  public void borrowBook(){
+  public void borrowItem(){
     this.borrowed = true;
   }
 
-  public void returnBook(){
+  public void returnItem(){
     this.borrowed = false;
   }
-
 
 }

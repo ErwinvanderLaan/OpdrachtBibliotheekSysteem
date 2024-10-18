@@ -1,13 +1,11 @@
 package book;
 
 import java.util.ArrayList;
-
-import static main.Main.askForInput;
+import java.util.Scanner;
 
 public class BookRepository {
 
-
-  ArrayList<Book> books;
+  static ArrayList<Book> books;
 
 // The methods
 
@@ -17,7 +15,7 @@ public class BookRepository {
   }
 
   // Add a book to 'books.'
-  public void addBook(){
+  public static void addBook(){
     Book book = new Book (
         Integer.parseInt(askForInput("Enter the ID number: \n")),
         askForInput("Enter the title of the book: \n"),
@@ -29,11 +27,12 @@ public class BookRepository {
   }
 
   // Remove a book from 'books.'
-  public void removeBook(long id){
+  public static void removeBook(long id){
     books.removeIf(book -> book.getId() == id);
   }
 
-  public ArrayList<Book>getBook(long id){
+  // Show a book from 'books.'
+  public static ArrayList<Book>getBook(long id){
     ArrayList<Book> book1 = new ArrayList<>();
     for (Book book : books) {
       if (book.getId() == id)
@@ -44,12 +43,12 @@ public class BookRepository {
   }
 
   // Shows all books in 'books.'
-  public ArrayList<Book> getAllBooks (){
-    return new ArrayList<>(books);
+  public static ArrayList<Book> getAllBooks(){
+    return books;
   }
 
   // Shows all available books in 'books.'
-  public ArrayList<Book> getAvailableBooks(){
+  public static ArrayList<Book> getAvailableBooks(){
     ArrayList<Book> availableBooks = new ArrayList<>();
     for (Book book : books) {
       if (!book.hasBeenBorrowed())
@@ -59,13 +58,34 @@ public class BookRepository {
   }
 
   // Shows all borrowed books in 'books.'
-  public ArrayList <Book> getBorrowedBooks(){
+  public static ArrayList <Book> getBorrowedBooks(){
     ArrayList<Book> borrowedBooks = new ArrayList<>();
     for (Book book : books) {
       if (book.hasBeenBorrowed())
         borrowedBooks.add(book);
     }
     return borrowedBooks;
+  }
+
+  // Set the borrowed status to true
+  public static void borrowBook(long id) {
+    for(Book book : books)
+      if (book.getId() == id)
+        book.borrowItem();
+  }
+
+  // Set the borrowed status to true
+  public static void returnBook(long id) {
+    for (Book book : books)
+      if (book.getId() == id)
+        book.returnItem();
+  }
+
+  // Scanner method to ask for user input.
+  public static String askForInput (String question){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println(question);
+    return scanner.next();
   }
 
 }

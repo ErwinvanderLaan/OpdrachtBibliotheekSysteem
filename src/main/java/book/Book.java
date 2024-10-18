@@ -2,7 +2,7 @@ package book;
 
 import library.Item;
 
-class Book extends Item {
+public class Book extends Item {
 
   private String isbn;
 
