@@ -1,9 +1,18 @@
+// Goal of this class: This creates the magazine repository, which stores all added magazines.
+// It contains:
+// 1. The repository class + constructor
+// 2. All available methods to modify, and view, magazine objects in the magazine repository
+// 3. The 'borrowItem' method to set the 'borrowed status' of a specific magazine to 'true.'
+// 4. The 'returnItem' method to set the 'borrowed status' of a specific magazine to 'false.'
+
+
 package magazine;
 
-import static main.Main.askForInput;
 
+import static main.Main.askForInput;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 
 public class MagazineRepository {
 

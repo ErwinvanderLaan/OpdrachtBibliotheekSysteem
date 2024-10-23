@@ -1,6 +1,13 @@
+// Goal of this class: Provides an options menu so the user can modify, and view, the book repository
+// It contains:
+// 1. It has the 'showMenu' method, which prints the available methods to the user.
+// 2. It has a switch, to execute the chosen method.
+
 package book;
 
-import java.util.Scanner;
+
+import static main.Main.askForInput;
+
 
 public class BookController {
 
@@ -37,11 +44,13 @@ public class BookController {
           break;
 
         case "2":
-          BookRepository.removeBook(1);
+          BookRepository.removeBook(
+              Integer.parseInt(askForInput("Enter the ID number: \n")));
           break;
 
         case "3":
-          System.out.println(BookRepository.getBook(1));
+          System.out.println(BookRepository.getBook(
+              Integer.parseInt(askForInput("Enter the ID number: \n"))));
           break;
 
         case "4":
@@ -49,11 +58,15 @@ public class BookController {
           break;
 
         case "5":
-          BookRepository.borrowBook(1);
+          BookRepository.borrowBook(
+              Integer.parseInt(askForInput("Enter the ID number: \n"))
+          );
           break;
 
         case "6":
-          BookRepository.returnBook(1);
+          BookRepository.returnBook(
+              Integer.parseInt(askForInput("Enter the ID number: \n"))
+          );
           break;
 
         case "7":
@@ -68,13 +81,6 @@ public class BookController {
           return;
       }
     }
-  }
-
-  // Scanner method to ask for user input.
-  public static String askForInput (String question){
-    Scanner scanner = new Scanner(System.in);
-    System.out.println(question);
-    return scanner.next();
   }
 }
 

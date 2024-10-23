@@ -1,7 +1,14 @@
+// Goal of this class: A child class of 'Item'. It defines 'Book' objects.
+// It contains:
+// 1. The Book class + constructor + 'get-and-set methods' needed for other methods
+// 2. The 'getOverview method' which displays the ISBN, Title and Author of a book.
+
 package book;
+
 
 import java.time.LocalDate;
 import library.Item;
+
 
 public class Book extends Item {
 

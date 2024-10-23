@@ -1,6 +1,16 @@
+// Goal of this class: This is the parent class for all objects stored in the library.
+// It contains:
+// 1. The parent class + constructor + get & set methods needed for other methods
+// 2. The abstract method 'getOverview' which gives a short overview of an item's properties.
+// Which properties are shown varies per item, i.e. each item type overrides 'getOverview.'
+// 3. Three methods by which the 'borrowed' status of an item can be viewed and modified to true / false.
+
+
 package library;
 
+
 import java.time.LocalDate;
+
 
 abstract public class Item {
 
@@ -10,7 +20,7 @@ abstract public class Item {
     private boolean borrowed = false;
     private LocalDate publicationDate;
 
-  // The methods:
+// The methods:
 
   // The class constructor:
   public Item ( long id, String title, int pages, LocalDate publicationDate){
@@ -20,6 +30,7 @@ abstract public class Item {
     this.publicationDate = publicationDate;
   }
 
+  // Gives a short overview of an item's properties.
   public abstract void getOverviewText();
 
 
@@ -29,7 +40,7 @@ abstract public class Item {
   }
 
 
-  // Getters and setters:
+// Getters and setters:
 
   // Getters:
   public long getId(){
