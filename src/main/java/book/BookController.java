@@ -8,9 +8,10 @@ public class BookController {
 
   public BookController(BookRepository bookRepository) {
     this.bookRepository = bookRepository;
+
   }
 
-  public String showMenu() {
+  public static void showMenu() {
     while (true) {
 
       // The choices for the user.
@@ -40,11 +41,11 @@ public class BookController {
           break;
 
         case "3":
-          BookRepository.getBook(1);
+          System.out.println(BookRepository.getBook(1));
           break;
 
         case "4":
-          BookRepository.getAllBooks();
+          System.out.println(BookRepository.getAllBooks());
           break;
 
         case "5":
@@ -56,15 +57,15 @@ public class BookController {
           break;
 
         case "7":
-          BookRepository.getBorrowedBooks();
+          System.out.println(BookRepository.getBorrowedBooks());
           break;
 
         case "8":
-          BookRepository.getAvailableBooks();
+          System.out.println(BookRepository.getAvailableBooks());
           break;
 
         case "q":
-          return "";
+          return;
       }
     }
   }

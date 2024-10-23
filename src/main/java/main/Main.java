@@ -1,12 +1,19 @@
 package main;
 
 import book.BookController;
+import book.BookRepository;
 import magazine.MagazineController;
+import magazine.MagazineRepository;
 import java.util.Scanner;
 
 public class Main {
 
   public static void main(String[] args) {
+
+    BookRepository bookRepository = new BookRepository();
+
+    MagazineRepository magazineRepository = new MagazineRepository();
+
 
 //Shows a menu where the user can choose between working with books or magazines
     System.out.println("""

@@ -1,22 +1,26 @@
 package library;
 
-public class Item {
+import java.time.LocalDate;
 
-    protected long id;
-    protected String title;
-    protected String author;
-    protected int pages;
-    protected boolean borrowed = false;
+abstract public class Item {
+
+    private long id;
+    private String title;
+    private int pages;
+    private boolean borrowed = false;
+    private LocalDate publicationDate;
 
   // The methods:
 
   // The class constructor:
-  public Item ( long id, String title, String author, int pages){
+  public Item ( long id, String title, int pages, LocalDate publicationDate){
     this.id = id;
     this.title = title;
-    this.author = author;
     this.pages = pages;
+    this.publicationDate = publicationDate;
   }
+
+  public abstract void getOverviewText();
 
 
   // Returns whether 'borrowed' is ture or false
@@ -32,8 +36,8 @@ public class Item {
     return id;
   }
 
-  public String getTitleWithAuthor(){
-    return title + author;
+  public String getTitle() {
+    return title;
   }
 
   // Setters:

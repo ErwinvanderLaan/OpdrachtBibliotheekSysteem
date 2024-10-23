@@ -1,5 +1,6 @@
 package book;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,7 +22,8 @@ public class BookRepository {
         askForInput("Enter the title of the book: \n"),
         askForInput("Enter the name of the author: \n"),
         Integer.parseInt(askForInput("Enter the number of pages the book has: \n")),
-        askForInput("Enter the ISBN: \n")
+        askForInput("Enter the ISBN: \n"),
+        LocalDate.parse (askForInput("Enter the publication date"))
     );
     books.add(book);
   }

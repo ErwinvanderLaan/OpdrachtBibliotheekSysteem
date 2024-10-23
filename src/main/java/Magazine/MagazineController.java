@@ -10,20 +10,20 @@ public class MagazineController {
     this.magazineRepository = magazineRepository;
   }
 
-  public String showMenu() {
+  public static void showMenu() {
     while (true) {
 
       // The choices for the user.
       System.out.println("""
               Choose one:
-              1. add a book
-              2. delete a book
-              3. show a book
-              4. show all persons
-              5. borrow a book
-              6. return a book
-              7. show a list of all borrowed books
-              8. show a list of all available books
+              1. add a magazine
+              2. delete a magazine
+              3. show a magazine
+              4. show all magazines
+              5. borrow a magazine
+              6. return a magazine
+              7. show a list of all borrowed magazines
+              8. show a list of all available magazines
               Or type 'q' to quit
               """);
 
@@ -40,11 +40,11 @@ public class MagazineController {
           break;
 
         case "3":
-          MagazineRepository.getMagazine(1);
+          System.out.println(MagazineRepository.getMagazine(1));
           break;
 
         case "4":
-          MagazineRepository.getAllMagazines();
+          System.out.println(MagazineRepository.getAllMagazines());
           break;
 
         case "5":
@@ -56,15 +56,15 @@ public class MagazineController {
           break;
 
         case "7":
-          MagazineRepository.getBorrowedMagazines();
+          System.out.println(MagazineRepository.getBorrowedMagazines());
           break;
 
         case "8":
-          MagazineRepository.getAvailableMagazines();
+          System.out.println(MagazineRepository.getAvailableMagazines());
           break;
 
         case "q":
-          return "";
+          return;
       }
     }
   }

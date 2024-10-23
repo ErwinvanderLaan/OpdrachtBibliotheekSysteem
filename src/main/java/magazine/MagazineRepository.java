@@ -1,6 +1,8 @@
 package magazine;
 
 import static main.Main.askForInput;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MagazineRepository {
@@ -20,10 +22,12 @@ public class MagazineRepository {
     Magazine magazine = new Magazine (
         Integer.parseInt(askForInput("Enter the ID number: \n")),
         askForInput("Enter the title of the book: \n"),
-        askForInput("Enter the name of the author: \n"),
+        askForInput("Enter the name of the publisher: \n"),
+        askForInput("Enter the copyEditor"),
         Integer.parseInt(askForInput("Enter the number of pages the book has: \n")),
         askForInput("Enter the ISSN: \n"),
-        Integer.parseInt(askForInput("Enter the issue number: \n"))
+        Integer.parseInt(askForInput("Enter the issue number: \n")),
+        LocalDate.parse (askForInput("Enter the publication date"))
         );
     magazines.add(magazine);
   }
