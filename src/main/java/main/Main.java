@@ -8,6 +8,7 @@ package main;
 
 import book.BookController;
 import book.BookRepository;
+import java.util.regex.Pattern;
 import magazine.MagazineController;
 import magazine.MagazineRepository;
 import java.util.Scanner;
@@ -30,7 +31,7 @@ public class Main {
         3. Type 'q' to quit.
         """);
 
-    String choice = askForInput("Choose an option:");
+    String choice = askForInput("Choose an option:", "[1-3] | q");
 
     // A switch for each of the three choices.
     switch (choice) {
@@ -49,9 +50,15 @@ public class Main {
   }
 
   // Scanner method to ask for user input.
-  public static String askForInput (String question){
+  public static String askForInput (String question, String pattern){
     Scanner scanner = new Scanner(System.in);
     System.out.println(question);
+    if (pattern != null){
+      while (!scanner.hasNext(Pattern.compile(pattern))){
+        System.out.println("Validation message");
+        scanner.next();
+      }
+    }
     return scanner.next();
   }
 

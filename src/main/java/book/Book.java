@@ -2,6 +2,7 @@
 // It contains:
 // 1. The Book class + constructor + 'get-and-set methods' needed for other methods
 // 2. The 'getOverview method' which displays the ISBN, Title and Author of a book.
+// 3. The 'maximumBorrowTime method' which displays the maximum time a book may be borrowed.
 
 package book;
 
@@ -24,10 +25,18 @@ public class Book extends Item {
     this.author = author;
     this.isbn = isbn;
   }
+
+  @Override
   public void getOverviewText(){
     System.out.println("Isbn: " + getIsbn() +
-        " Title: " + getTitle() + " Author: " + getAuthor() );
+        " Title: " + getTitle() + " Author: " + getAuthor() + maximumBorrowTime() );
   }
+
+  @Override
+  public String maximumBorrowTime() {
+    return "Maximum borrow time for a book is 14 days";
+  }
+
 // Getters & Setters
 
   // Getters

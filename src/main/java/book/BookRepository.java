@@ -27,12 +27,12 @@ public class BookRepository {
   // Add a book to 'books.'
   public static void addBook(){
     Book book = new Book (
-        Integer.parseInt(askForInput("Enter the ID number: \n")),
-        askForInput("Enter the title of the book: \n"),
-        askForInput("Enter the name of the author: \n"),
-        Integer.parseInt(askForInput("Enter the number of pages the book has: \n")),
-        askForInput("Enter the ISBN: \n"),
-        LocalDate.parse (askForInput("Enter the publication date \n"))
+        Integer.parseInt(askForInput("Enter the ID number: \n", "\\d+")),
+        askForInput("Enter the title of the book: \n", "[a-Z]"),
+        askForInput("Enter the name of the author: \n", "[a-Z]"),
+        Integer.parseInt(askForInput("Enter the number of pages the book has: \n", "\\d+")),
+        askForInput("Enter the ISBN: \n", "\\d+"),
+        LocalDate.parse (askForInput("Enter the publication date \n", "\\d+"))
     );
     books.add(book);
   }

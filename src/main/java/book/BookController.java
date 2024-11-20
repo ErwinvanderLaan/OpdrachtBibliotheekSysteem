@@ -35,9 +35,9 @@ public class BookController {
               Or type 'q' to quit
               """);
 
-      String choice = askForInput("Choose an option:");
+      String choice = askForInput("Choose an option:", "[1-8] | q");
 
-      // A switch for each of the three choices.
+      // A switch for each of the choices.
       switch (choice) {
         case "1":
           BookRepository.addBook();
@@ -45,12 +45,12 @@ public class BookController {
 
         case "2":
           BookRepository.removeBook(
-              Integer.parseInt(askForInput("Enter the ID number: \n")));
+              Integer.parseInt(askForInput("Enter the ID number: \n", "\\d+")));
           break;
 
         case "3":
           System.out.println(BookRepository.getBook(
-              Integer.parseInt(askForInput("Enter the ID number: \n"))));
+              Integer.parseInt(askForInput("Enter the ID number: \n", "\\d+"))));
           break;
 
         case "4":
@@ -59,13 +59,13 @@ public class BookController {
 
         case "5":
           BookRepository.borrowBook(
-              Integer.parseInt(askForInput("Enter the ID number: \n"))
+              Integer.parseInt(askForInput("Enter the ID number: \n", "\\d+"))
           );
           break;
 
         case "6":
           BookRepository.returnBook(
-              Integer.parseInt(askForInput("Enter the ID number: \n"))
+              Integer.parseInt(askForInput("Enter the ID number: \n", "\\d+"))
           );
           break;
 

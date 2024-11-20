@@ -29,14 +29,14 @@ public class MagazineRepository {
   // Add a book
   public static void addMagazine(){
     Magazine magazine = new Magazine (
-        Integer.parseInt(askForInput("Enter the ID number: \n")),
-        askForInput("Enter the title of the book: \n"),
-        askForInput("Enter the name of the publisher: \n"),
-        askForInput("Enter the copyEditor"),
-        Integer.parseInt(askForInput("Enter the number of pages the book has: \n")),
-        askForInput("Enter the ISSN: \n"),
-        Integer.parseInt(askForInput("Enter the issue number: \n")),
-        LocalDate.parse (askForInput("Enter the publication date"))
+        Integer.parseInt(askForInput("Enter the ID number: \n", "\\d+")),
+        askForInput("Enter the title of the book: \n", "[a-Z]"),
+        askForInput("Enter the name of the publisher: \n", "[a-Z]"),
+        askForInput("Enter the copyEditor", "[a-Z]"),
+        Integer.parseInt(askForInput("Enter the number of pages the book has: \n", "\\d+")),
+        askForInput("Enter the ISSN: \n", "\\d+"),
+        Integer.parseInt(askForInput("Enter the issue number: \n", "\\d+")),
+        LocalDate.parse (askForInput("Enter the publication date", "\\d+"))
         );
     magazines.add(magazine);
   }
@@ -89,7 +89,7 @@ public class MagazineRepository {
         magazine.borrowItem();
   }
 
-  // Set the borrowed status to 'true'
+  // Set the borrowed status to 'false'
   public static void returnMagazine(long id) {
     for (Magazine magazine : magazines)
       if(magazine.getId() == id)
