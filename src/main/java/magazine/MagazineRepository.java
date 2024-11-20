@@ -9,6 +9,7 @@
 package magazine;
 
 
+import static library.ItemRepository.items;
 import static main.Main.askForInput;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class MagazineRepository {
         LocalDate.parse (askForInput("Enter the publication date", "\\d+"))
         );
     magazines.add(magazine);
+    items.add(magazine);
   }
 
   // Remove a book

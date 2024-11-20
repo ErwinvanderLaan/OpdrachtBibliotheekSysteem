@@ -10,17 +10,16 @@
 
 package library;
 
-
 import java.time.LocalDate;
 
 
 abstract public class Item {
 
-    private long id;
-    private String title;
-    private int pages;
+    private final long id;
+    private final String title;
+    private final int pages;
     private boolean borrowed = false;
-    private LocalDate publicationDate;
+    private final LocalDate publicationDate;
 
 // The methods:
 
@@ -31,6 +30,7 @@ abstract public class Item {
     this.pages = pages;
     this.publicationDate = publicationDate;
   }
+
 
   // Gives a short overview of an item's properties.
   public abstract void getOverviewText();

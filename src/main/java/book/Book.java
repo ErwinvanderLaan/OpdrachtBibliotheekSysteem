@@ -13,8 +13,8 @@ import library.Item;
 
 public class Book extends Item {
 
-  private String author;
-  private String isbn;
+  private final String author;
+  private final String isbn;
 
 
   // The methods:
@@ -49,14 +49,5 @@ public class Book extends Item {
   public String getIsbn() {
     return isbn;
 
-  }
-
-  public void setAuthor(String author) {
-    this.author = author;
-  }
-
-  // Setters
-  public void setIsbn(String isbn) {
-    this.isbn = isbn;
   }
 }

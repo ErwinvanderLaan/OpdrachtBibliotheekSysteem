@@ -7,8 +7,9 @@
 
 package book;
 
-
+import static library.ItemRepository.items;
 import static main.Main.askForInput;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -35,6 +36,7 @@ public class BookRepository {
         LocalDate.parse (askForInput("Enter the publication date \n", "\\d+"))
     );
     books.add(book);
+    items.add(book);
   }
 
   // Remove a book from 'books.'
