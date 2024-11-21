@@ -45,3 +45,6 @@ public class Magazine extends Item {
     return issueNumber;
   }
 }
+
+
+

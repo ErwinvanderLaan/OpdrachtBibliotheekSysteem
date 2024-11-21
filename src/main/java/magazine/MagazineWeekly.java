@@ -35,3 +35,9 @@ public class MagazineWeekly extends Magazine{
 
 
 }
+
+
+
+
+
+
