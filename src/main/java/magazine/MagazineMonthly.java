@@ -34,3 +34,8 @@ public class MagazineMonthly extends Magazine
     return monthNumber;
   }
 }
+
+
+
+
+
