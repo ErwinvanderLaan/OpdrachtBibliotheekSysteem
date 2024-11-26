@@ -1,24 +1,26 @@
-// Goal of this class: The main class starts the application. Specifically:
-// 1. It creates a book- and a magazine repository, so created objects can be stored in these.
-// 2. It has a scanner method, so user input can be processed.
-// 3. It has a switch, to allow a user to work with either books or magazines.
-
 package main;
 
 import book.BookController;
+import java.util.Scanner;
+import java.util.regex.Pattern;
 import library.BorrowService;
 import magazine.MagazineController;
 
-import java.util.regex.Pattern;
-import java.util.Scanner;
 
+/**
+ * Goal of this class: The main class starts the application. Specifically: 1. It creates a book-
+ * and a magazine repository, so created objects can be stored in these. 2. It has a scanner method,
+ * so user input can be processed. 3. It has a switch, to allow a user to work with either books or
+ * magazines.
+ */
 
 public class Main {
 
+  /**
+   * The main class.
+   */
   public static void main(String[] args) {
 
-
-//Shows a menu where the user can choose between working with books or magazines
     System.out.println("""
         Choose an option:
         1. Work with books
@@ -41,19 +43,25 @@ public class Main {
 
       case "3":
         BorrowService.showMenu();
+        break;
 
       case "q":
         break;
+
+      default:
+        System.out.println("Option not found. Please try again.");
     }
 
   }
 
-  // Scanner method to ask for user input. Pattern checks if the input is correct.
-  public static String askForInput (String question, String pattern){
+  /**
+   * Scanner method to ask for user input. Pattern checks if the input is correct.
+   */
+  public static String askForInput(String question, String pattern) {
     Scanner scanner = new Scanner(System.in);
     System.out.println(question);
-    if (pattern != null){
-      while (!scanner.hasNext(Pattern.compile(pattern))){
+    if (pattern != null) {
+      while (!scanner.hasNext(Pattern.compile(pattern))) {
         System.out.println("Correct input!");
         scanner.next();
       }
