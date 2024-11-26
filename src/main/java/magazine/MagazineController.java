@@ -28,7 +28,7 @@ public class MagazineController {
               Or type 'q' to quit.
               """);
 
-      String choice = askForInput("Choose an option:", "[1-8] | q");
+      String choice = askForInput("Choose an option:", "[1-8]|q");
 
       // A switch for each of the choices.
       switch (choice) {

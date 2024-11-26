@@ -27,7 +27,7 @@ public class Main {
         Type 'q' to quit.
         """);
 
-    String choice = askForInput("Choose an option:", "[1-3] | q");
+    String choice = askForInput("Choose an option:", "[1-3]|q");
 
     // A switch for each of the three choices.
     switch (choice) {

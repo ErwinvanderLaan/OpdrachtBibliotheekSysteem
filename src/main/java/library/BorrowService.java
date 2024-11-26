@@ -25,7 +25,7 @@ public class BorrowService {
               Or type 'q' to quit
               """);
 
-      String choice = askForInput("Choose an option:", "[1-4] | q");
+      String choice = askForInput("Choose an option:", "[1-4]|q");
 
       // A switch for each of the choices.
       switch (choice) {
